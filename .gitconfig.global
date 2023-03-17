@@ -1,0 +1,15 @@
+[user]
+	name = user
+	email = user@localhost
+[credential]
+	helper = cache
+[init]
+	defaultBranch = master
+[alias]
+	stat = status
+	cv = commit -v
+	cav = commit -av
+	cm = commit -m
+	last = log -1 HEAD --stat
+	tree = log --oneline --graph --decorate --all
+	helpalias = "!git config -l | grep alias"

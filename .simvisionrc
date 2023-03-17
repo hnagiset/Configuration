@@ -1,0 +1,43 @@
+# Documentation:
+#  doc/SimVisCmdLang/
+#  doc/SimVisTclCmds/
+
+###################
+# General Options #
+###################
+
+# Show both icons and text in toolbars.
+preferences set toolbars-style both
+
+###################
+# Waveform Window #
+###################
+
+# Show full signal names in Waveform Window.
+preferences set show-full-signal-names 1
+
+# Make waveform height larger than usual. Default is 15.
+#
+# waveform-height
+#  Number of pixels for the height of a digital waveform.
+preferences set waveform-height 20
+
+##################
+# Design Browser #
+##################
+
+# Don't show these modules.
+preferences set db-scope-noshow-moduletype {L2R DFT_ieee OPCG opcg tcbn16ffc}
+# Don't show internal signals by default.
+preferences set db-signal-show-internal 0
+# Show module names.
+preferences set db-show-modnames 1
+
+# TODO: Read about db-filter-regexp
+
+###########
+# Plugins #
+###########
+
+# This plugin calculates and displays freqyency as an analog signal.
+preferences set plugin-enable-waveformfrequencyplot 1
