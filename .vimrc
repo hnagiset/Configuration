@@ -28,10 +28,10 @@ set list
 set listchars=tab:\`\ 
 
 set background=light
-"if has('gui_running')
+if has('gui_running')
 "    colorscheme solarized
-"    set guifont=Monospace\ 12
-"endif
+    set guifont=Monospace\ 12
+endif
 
 " Mappings {{{1
 
