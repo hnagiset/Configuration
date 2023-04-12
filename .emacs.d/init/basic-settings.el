@@ -25,7 +25,7 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (savehist-mode 1)
-;(desktop-save-mode 1)
+(desktop-save-mode 1)
 
 (require 'server)
 (unless (server-running-p)
