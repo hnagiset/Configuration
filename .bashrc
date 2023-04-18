@@ -25,7 +25,7 @@ umask 027
 
 alias ls='ls --color=auto -F'
 alias l=ls
-alias ll="ls -o"
+alias ll="ls -l"
 alias la="ls -a"
 
 alias hn-copy-pwd="pwd | tr -d '\n' | xclip; pwd"
