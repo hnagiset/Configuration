@@ -11,6 +11,8 @@
 (setq-default indent-tabs-mode nil)
 (setq frame-resize-pixelwise t)
 (setq confirm-kill-emacs #'yes-or-no-p)
+(setq mouse-wheel-tilt-scroll t)
+(setq mouse-wheel-flip-direction t)
 
 (put 'narrow-to-region 'disabled nil)
 
