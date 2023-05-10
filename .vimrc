@@ -25,7 +25,7 @@ set number
 set laststatus=1
 set ruler
 set list
-set listchars=tab:\`\ 
+set listchars=tab:\`\ ,trail:•
 
 set background=light
 if has('gui_running')
