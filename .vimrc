@@ -30,7 +30,6 @@ set listchars=tab:\`\ ,trail:•
 set background=light
 if has('gui_running')
 "    colorscheme solarized
-    set guifont=Monospace\ 12
 endif
 
 " Mappings {{{1
