@@ -30,6 +30,7 @@ set listchars=tab:\`\ ,trail:•
 set background=light
 if has('gui_running')
 "    colorscheme solarized
+     set lines=27 columns=100
 endif
 
 " Mappings {{{1
@@ -199,6 +200,21 @@ augroup vimrc_text
     "au FileType text setlocal colorcolumn=80
     au FileType text setlocal textwidth=79
     "au FileType text setlocal spell
+augroup END
+
+augroup vimrc_org
+    au!
+    au BufNewFile,BufRead *.org nnoremap <buffer> <LocalLeader>  :echo "
+                \ i: Insert"
+                \\| call HNFinishKeyMapping("\<LocalLeader>")<CR>
+    au BufNewFile,BufRead *.org nnoremap <LocalLeader>i  :echo "
+                \ q: Insert Quote\n
+                \ s: Insert Source"
+                \\| call HNFinishKeyMapping("\<LocalLeader>i")<CR>
+    au BufNewFile,BufRead *.org nnoremap <buffer>
+                \<LocalLeader>iq o#+begin_quote<Esc>o#+end_quote<Esc>
+    au BufNewFile,BufRead *.org nnoremap <buffer>
+                \<LocalLeader>is o#+begin_src sh<Esc>o#+end_src<Esc>
 augroup END
 
 augroup vimrc_systemverilog
