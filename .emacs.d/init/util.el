@@ -163,14 +163,14 @@
 (defun /init/util/create-note (title)
   "Create a new Org note."
   (interactive (list (read-string "Title: ")))
-  (let* ((timestamp (substring (shell-command-to-string "date +%s") 0 -1))
+  (let* ((timestamp (car (process-lines "date" "+%s")))
          (filename (concat "~/Documents/Notes/" timestamp ".org"))
-         (date (shell-command-to-string "date +%Y/%m/%d")))
+         (date (substring (shell-command-to-string "date +%Y/%m/%d") 0 -1)))
     (find-file filename)
     (erase-buffer)
     (insert "# -*- mode: org -*-\n")
     (insert "#+FILETAGS:\n")
     ;; date includes a newline
-    (insert (concat "#+DATE: " date))
-    (insert "#+TITLE: " title "\n"))
+    (insert (concat "#+DATE: " date "\n"))
+    (insert (format "#+TITLE: %s\n" title)))
   (org-mode))
