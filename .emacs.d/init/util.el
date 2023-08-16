@@ -174,3 +174,13 @@
     (insert (concat "#+DATE: " date "\n"))
     (insert (format "#+TITLE: %s\n" title)))
   (org-mode))
+
+(defun /init/util/org-insert-screenshot ()
+  "Insert latest screenshot into Org document."
+  (interactive)
+  (let ((screenshot
+         (car
+          (process-lines "hn-screenshot.sh"
+                         (concat (getenv "HOME") "/Pictures/Screenshots")
+                         "./images"))))
+    (insert (format "[[%s]]" screenshot))))
