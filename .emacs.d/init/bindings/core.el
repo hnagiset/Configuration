@@ -38,6 +38,11 @@
   (find-file "~/.notes")
   (/config/util/set-comment-char "#"))
 
+(defun /init/bindings/core/open-consolidated-notes ()
+  (interactive)
+  (find-file "~/Documents/Notes/consolidated.org")
+  (read-only-mode))
+
 (defun /init/bindings/core/open-scratch-buffer nil
   "Open/Create a scratch buffer"
   (interactive)
@@ -54,6 +59,7 @@
   ("o" nil "Open...")
   ("oa" #'/init/util/view-agenda "Open Agenda")
   ("os" #'/init/bindings/core/open-scratch-buffer "Open Scratch Buffer")
+  ("on" #'/init/bindings/core/open-consolidated-notes "Open Consolidated Notes")
   ("oo" #'/init/util/open-occur-by-major-mode "Open Occur")
   ("p" nil "Preferences...")
   ("p-" #'text-scale-decrease "Decrease Text Scale")
