@@ -184,3 +184,20 @@
                          (concat (getenv "HOME") "/Pictures/Screenshots")
                          "./images"))))
     (insert (format "[[%s]]" screenshot))))
+
+;; Copied from https://stackoverflow.com/a/11059012
+(defun /init/util/bury-compile-buffer-if-successful (buffer string)
+  "Bury a compilation buffer if succeeded without warnings "
+  (when (and
+         (buffer-live-p buffer)
+         (string-match "compilation" (buffer-name buffer))
+         (string-match "finished" string)
+         (not
+          (with-current-buffer buffer
+            (goto-char (point-min))
+            (search-forward "warning" nil t))))
+    (run-with-timer 1.0 nil
+                    (lambda (buf)
+                      (bury-buffer buf)
+                      (delete-window (get-buffer-window buf)))
+                    buffer)))

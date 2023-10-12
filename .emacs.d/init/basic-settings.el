@@ -41,6 +41,9 @@
 (advice-add 'Buffer-menu-this-window :after
             (lambda () (kill-buffer "*Buffer List*")))
 
+(add-hook 'compilation-finish-functions
+          '/init/util/bury-compile-buffer-if-successful)
+
 ;; Set highlight/region color to something more visible.
 (set-face-attribute 'region nil :background "#79fcaf")
 

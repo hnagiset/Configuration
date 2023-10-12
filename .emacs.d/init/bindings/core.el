@@ -88,10 +88,16 @@
 ;;; Global Mappings
 ;; Use only uppercase letters
 (/init/bindings/core/define-keys /init/bindings/core/global-map
+  ("R" (lambda ()
+         (interactive)
+         (save-buffer)
+         (recompile))
+   "Save and Recompile")
   ("C" #'company-complete "Company Complete")
   ("G" (lambda ()
          (interactive)
-         (message buffer-file-name)) "Display File Name")
+         (message buffer-file-name))
+   "Display File Name")
   ("N" #'evil-complete-next "Complete Next")
   ("P" #'evil-complete-previous "Complete Previous")
   ("S" #'ispell-word "Correct Spelling at Point")

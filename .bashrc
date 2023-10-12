@@ -38,6 +38,9 @@ alias bcl="bc -ql"
 
 alias hn-du="env ls -A1 | xargs -d '\n' du -shc | sort -h"
 
+alias ..="cd ..; ls"
+alias ....="cd ..; cd ..; ls"
+
 #############
 # Functions #
 #############
