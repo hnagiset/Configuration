@@ -44,6 +44,11 @@
 (add-hook 'compilation-finish-functions
           '/init/util/bury-compile-buffer-if-successful)
 
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (set-frame-width frame 110)
+            (set-frame-height frame 38)))
+
 ;; Set highlight/region color to something more visible.
 (set-face-attribute 'region nil :background "#79fcaf")
 
