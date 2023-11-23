@@ -30,7 +30,7 @@ set listchars=tab:\`\ ,trail:•
 set background=light
 if has('gui_running')
 "    colorscheme solarized
-     set lines=27 columns=100
+     set lines=27 columns=90
 endif
 
 " Mappings {{{1
