@@ -175,6 +175,19 @@
     (insert (format "#+TITLE: %s\n" title)))
   (org-mode))
 
+(defun /init/util/text-box (prefix text)
+  "Create a new Org note."
+  (interactive "P\nsText: ")
+  (let ((length (length text)))
+    (if prefix
+        (progn
+          (insert "┏━" (make-string length ?━) "━┓" "\n")
+          (insert "┃ "  text                   " ┃" "\n")
+          (insert "┗━" (make-string length ?━) "━┛" "\n"))
+      (insert "┌─" (make-string length ?─) "─┐" "\n")
+      (insert "│ "  text                   " │" "\n")
+      (insert "└─" (make-string length ?─) "─┘" "\n"))))
+
 (defun /init/util/org-insert-screenshot ()
   "Insert latest screenshot into Org document."
   (interactive)
