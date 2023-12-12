@@ -8,6 +8,6 @@ else
     EXE=chromium-browser
 fi
 
-$EXE --user-data-dir="$DATA_DIR" #--incognito
+$EXE --user-data-dir="$DATA_DIR" --enable-features=UseOzonePlatform --ozone-platform=wayland #--incognito
 
 rm -rf "$DATA_DIR"
