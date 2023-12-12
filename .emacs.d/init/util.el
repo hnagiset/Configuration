@@ -134,6 +134,7 @@
   "Show agenda in an Org buffer."
   (interactive (list (read-string "Year: " "2023")))
   (switch-to-buffer (get-buffer-create "*agenda*"))
+  (read-only-mode -1)
   (erase-buffer)
   (insert "# -*- mode: org -*-\n")
   (insert "#+TITLE: Agenda\n")
