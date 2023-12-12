@@ -31,6 +31,7 @@ set background=light
 if has('gui_running')
 "    colorscheme solarized
      set lines=27 columns=90
+     set winaltkeys=no
 endif
 
 " Mappings {{{1
