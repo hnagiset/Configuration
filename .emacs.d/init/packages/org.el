@@ -9,6 +9,8 @@
 (setq org-adapt-indentation nil)
 
 (setq org-agenda-files '("~/Cloud/org/todo.org"))
+(setq org-agenda-span 10)
+(setq org-agenda-start-day "-4d")
 
 (add-hook 'org-mode-hook 'auto-fill-mode)
 (add-hook 'org-mode-hook 'org-indent-mode)
