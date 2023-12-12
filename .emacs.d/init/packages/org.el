@@ -8,5 +8,7 @@
 (setq org-archive-location "~/Cloud/org/archive.org::* From %s")
 (setq org-adapt-indentation nil)
 
+(setq org-agenda-files '("~/Cloud/org/todo.org"))
+
 (add-hook 'org-mode-hook 'auto-fill-mode)
 (add-hook 'org-mode-hook 'org-indent-mode)
