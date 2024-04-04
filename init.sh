@@ -22,7 +22,7 @@ link_file "$SCRIPT_DIR"/Bash/hn-chromium.sh        "$HOME"/bin/hn-chromium.sh
 link_file "$SCRIPT_DIR"/Csh/hn-tmpdir.csh          "$HOME"/bin/hn-tmpdir.csh
 
 # .emacs.d/
-clone_repo "https://github.com/volipher/verilog3-mode.git" \
+clone_repo "https://github.com/hnagiset/verilog3-mode.git" \
     ".emacs.d/elisp/verilog3-mode/"
 clone_repo "https://github.com/nashamri/spacemacs-theme.git" \
     ".emacs.d/elisp/spacemacs-theme/"

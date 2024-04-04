@@ -34,9 +34,7 @@
 
 (defun /init/bindings/core/open-notes ()
   (interactive)
-  (split-window-vertically)
-  (find-file "~/.notes")
-  (/config/util/set-comment-char "#"))
+  (find-file "~/Cloud/org/notes.org"))
 
 (defun /init/bindings/core/open-consolidated-notes ()
   (interactive)
@@ -58,7 +56,8 @@
   ("n" #'/init/util/create-note "Create Note")
   ("o" nil "Open...")
   ("oa" #'org-agenda-list "Open Agenda")
-  ("on" #'/init/bindings/core/open-consolidated-notes "Open Consolidated Notes")
+  ("on" #'/init/bindings/core/open-notes "Open Notes")
+  ("oc" #'/init/bindings/core/open-consolidated-notes "Open Consolidated Notes")
   ("oo" #'/init/util/open-occur-by-major-mode "Open Occur")
   ("os" #'/init/bindings/core/open-scratch-buffer "Open Scratch Buffer")
   ("oy" #'/init/util/view-agenda "Open Year")

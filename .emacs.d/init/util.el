@@ -126,6 +126,19 @@
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
+;; https://stackoverflow.com/a/35375498
+;;
+;; "All the primitives that change the buffer set deactivate-mark. [...] To
+;; write Lisp code that modifies the buffer without causing deactivation of the
+;; mark at the end of the command, bind deactivate-mark to nil around the code
+;; that does the modification."
+(defun /init/util/occur-selection ()
+  (interactive)
+  (when (region-active-p)
+    (let (deactivate-mark)
+      (occur (regexp-quote
+              (buffer-substring (region-beginning) (region-end)))))))
+
 (defun /init/util/copy-file-name ()
   (interactive)
   (gui-set-selection 'PRIMARY (buffer-file-name)))
