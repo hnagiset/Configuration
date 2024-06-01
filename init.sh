@@ -9,6 +9,7 @@ if [ -f "$FUNCTIONS" ]; then
 fi
 
 link_file "$SCRIPT_DIR"/.bashrc                    "$HOME"/.bashrc
+link_file "$SCRIPT_DIR"/.bash_profile              "$HOME"/.bash_profile
 link_file "$SCRIPT_DIR"/.cshrc                     "$HOME"/.cshrc
 link_file "$SCRIPT_DIR"/.emacs.d                   "$HOME"/.emacs.d
 link_file "$SCRIPT_DIR"/.inputrc                   "$HOME"/.inputrc
