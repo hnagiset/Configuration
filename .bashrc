@@ -61,3 +61,10 @@ if [ -f ~/.bashrc.private ]; then
     source ~/.bashrc.private
 fi
 
+#########
+# Local #
+#########
+
+if [ -f ~/.bashrc.local ]; then
+    source ~/.bashrc.local
+fi
