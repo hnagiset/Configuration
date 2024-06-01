@@ -101,6 +101,11 @@
     gnome.gnome-terminal
     gnome.gnome-tweaks
     git
+    tmux
+    emacs
+    fastfetch
+    pandoc
+    gnumake
   ];
 
   # Include ~/bin/ in $PATH
