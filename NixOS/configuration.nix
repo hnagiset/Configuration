@@ -107,6 +107,7 @@
     python3
     libnotify
     gnupg
+    pinentry-tty
   ];
 
   # Include ~/bin/ in $PATH
