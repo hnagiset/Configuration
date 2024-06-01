@@ -106,6 +106,9 @@
     fastfetch
     pandoc
     gnumake
+    python3
+    libnotify
+    gnupg
   ];
 
   # Include ~/bin/ in $PATH
