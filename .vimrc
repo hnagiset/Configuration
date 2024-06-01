@@ -17,6 +17,15 @@ set nomodeline
 set hidden
 set path+=**
 " set autochdir
+set backspace=indent,eol,start
+
+" I don't know why we check for 'reltime'. I copied this from Fedora's
+" /etc/vimrc. The comment was 'Do incremental searching when it's possible to
+" timeout.'
+if has('reltime')
+  set incsearch
+endif
+set hlsearch
 
 runtime macros/matchit.vim
 
