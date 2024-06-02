@@ -16,6 +16,10 @@ export PATH
 # Settings #
 ############
 
+# PS1=" [\u@\h \W]\\$ "
+# PS1="\[\e[00;34m\][\u@\h \W]\\$ \[\e[0m\]"
+PS1="\[\e[0;34m\][\u@\h \[\e[1;32m\]\W\[\e[0;34m\]]\\$ \[\e[0m\]"
+
 export EDITOR="vim"
 umask 027
 
