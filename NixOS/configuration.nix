@@ -110,6 +110,8 @@
     pinentry-gnome3
     file
     ledger
+    tree
+    smartmontools
   ];
 
   # Include ~/bin/ in $PATH
