@@ -10,6 +10,14 @@
       ./hardware-configuration.nix
     ];
 
+  #boot.kernelParams = [
+  #  "nvme_core.default_ps_max_latency_us=0"
+  #  "iommu=soft"
+  #  "debug"
+  #];
+
+  #boot.kernel.sysctl."kernel.sysrq" = 1;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -128,7 +136,9 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+  services.openssh.settings.PermitRootLogin = "no";
+  services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
