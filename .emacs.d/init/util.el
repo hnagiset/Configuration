@@ -49,7 +49,7 @@
 (defun /init/util/insert-date ()
   "Insert the date and time into the current buffer."
   (interactive)
-  (insert (shell-command-to-string "echo -n `date`")))
+  (insert (shell-command-to-string "echo -n `date +'%Y/%m/%d (%a, %r %Z)'`")))
 
 (defun /init/util/disable-themes ()
   "Disable enabled themes."
