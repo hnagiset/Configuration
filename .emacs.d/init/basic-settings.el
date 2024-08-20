@@ -12,7 +12,7 @@
 (setq frame-resize-pixelwise t)
 (setq confirm-kill-emacs #'yes-or-no-p)
 (setq mouse-wheel-tilt-scroll t)
-(setq mouse-wheel-flip-direction t)
+(setq mouse-wheel-flip-direction nil)
 
 (put 'narrow-to-region 'disabled nil)
 
