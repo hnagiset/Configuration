@@ -12,6 +12,8 @@
 (setq org-agenda-span 10)
 (setq org-agenda-start-day "-4d")
 (setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-window-setup 'only-window)
+(setq org-agenda-restore-windows-after-quit t)
 
 (add-hook 'org-mode-hook 'auto-fill-mode)
 (add-hook 'org-mode-hook 'org-indent-mode)
