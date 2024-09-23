@@ -15,6 +15,8 @@ echo 'user_pref("browser.newtabpage.enabled", false);' >> "$PROFILE_DIR/user.js"
 echo 'user_pref("datareporting.policy.firstRunURL", "");' >> "$PROFILE_DIR/user.js"
 echo 'user_pref("startup.homepage_welcome_url", "bing.com");' >> "$PROFILE_DIR/user.js"
 echo 'user_pref("browser.toolbars.bookmarks.visibility", "never");' >> "$PROFILE_DIR/user.js"
+echo 'user_pref("mousewheel.with_alt.action", 5);' >> "$PROFILE_DIR/user.js"
+echo 'user_pref("general.autoScroll", true);' >> "$PROFILE_DIR/user.js"
 
 cp ~/.mozilla/firefox/*.default*/search.json.mozlz4 "$PROFILE_DIR"
 
