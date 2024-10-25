@@ -23,6 +23,14 @@ PS1="\[\e[0;34m\][\u@\h \[\e[1;32m\]\W\[\e[0;34m\]]\\$ \[\e[0m\]"
 export EDITOR="vim"
 umask 027
 
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+export HISTFILE=~/.bash_history_2
+export HISTTIMEFORMAT="[%F %T] "
+# prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 ###########
 # Aliases #
 ###########
