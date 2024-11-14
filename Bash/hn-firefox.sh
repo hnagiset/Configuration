@@ -8,6 +8,8 @@ if flatpak list | grep Firefox; then
     FIREFOX="flatpak run --filesystem=$PROFILE_DIR org.mozilla.firefox"
 fi
 
+echo 'user_pref("browser.tabs.warnOnClose", true);' >> "$PROFILE_DIR/user.js"
+echo 'user_pref("dom.event.clipboardevents.enabled", false);' >> "$PROFILE_DIR/user.js"
 echo 'user_pref("dom.event.clipboardevents.enabled", false);' >> "$PROFILE_DIR/user.js"
 echo 'user_pref("dom.event.contextmenu.enabled", false);' >> "$PROFILE_DIR/user.js"
 echo 'user_pref("browser.urlbar.placeholderName", "DuckDuckGo!");' >> "$PROFILE_DIR/user.js"

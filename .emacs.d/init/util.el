@@ -18,8 +18,8 @@
 (defun /init/util/position-frame ()
   "Resize and position frame to top left."
   (interactive)
-  (set-frame-width (selected-frame) 110)
-  (set-frame-height (selected-frame) 38)
+  (set-frame-width (selected-frame) 130)
+  (set-frame-height (selected-frame) 40)
   (set-frame-position (selected-frame) 0 0))
 
 (defun /init/util/set-comment-char (char)
