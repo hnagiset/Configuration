@@ -24,9 +24,13 @@ link_file "$SCRIPT_DIR"/Csh/hn-tmpdir.csh          "$HOME"/bin/hn-tmpdir.csh
 
 # .emacs.d/
 clone_repo "https://github.com/hnagiset/verilog3-mode.git" \
-    ".emacs.d/elisp/verilog3-mode/"
+    "$HOME"/.emacs.d/elisp/verilog3-mode/
 clone_repo "https://github.com/nashamri/spacemacs-theme.git" \
-    ".emacs.d/elisp/spacemacs-theme/"
+    "$HOME"/.emacs.d/elisp/spacemacs-theme/
+clone_repo "https://github.com/protesilaos/standard-themes" \
+    "$HOME"/.emacs.d/elisp/standard-themes/
+clone_repo "https://github.com/doomemacs/themes" \
+    "$HOME"/.emacs.d/elisp/doom-themes/
 # .vim/
 clone_repo "https://github.com/volipher/vim-rsi.git" \
     "$HOME"/.vim/pack/vim-rsi/start/vim-rsi/
