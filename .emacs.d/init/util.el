@@ -18,8 +18,8 @@
 (defun /init/util/position-frame ()
   "Resize and position frame to top left."
   (interactive)
-  (set-frame-width (selected-frame) 130)
-  (set-frame-height (selected-frame) 40)
+  (set-frame-width (selected-frame) 135)
+  (set-frame-height (selected-frame) 45)
   (set-frame-position (selected-frame) 0 0))
 
 (defun /init/util/set-comment-char (char)
@@ -56,11 +56,26 @@
   (interactive)
   (mapcar #'disable-theme custom-enabled-themes))
 
-(defun /init/util/default-theme ()
-  "Load Default Theme."
+(defun /init/util/personal-theme ()
+  "Load Personal Theme."
   (interactive)
   (/init/util/disable-themes)
   (load-theme 'personal-light t))
+
+(defun /init/util/primary-theme ()
+  "Load Primary Theme."
+  (interactive)
+  (/init/util/disable-themes)
+  (require 'doom-themes)
+  (load-theme 'doom-moonlight t))
+
+(defun /init/util/secondary-theme ()
+  "Load Secondary Theme."
+  (interactive)
+  (/init/util/disable-themes)
+  (require 'doom-themes)
+  (setq doom-one-brighter-comments t)
+  (load-theme 'doom-one t))
 
 (defun /init/util/load-theme (theme-name)
   "Load a Favorite Theme."
@@ -79,10 +94,20 @@
                       "solarized-dark"
                       "solarized-wombat-dark"
                       "solarized-zenburn"
+                      "standard-light"
+                      "standard-dark"
+                      "doom-one"
+                      "doom-one-light"
+                      "doom-laserwave"
+                      "doom-moonlight"
                       "anti-zenburn")
      nil t)))
   (when (string-match "^spacemacs" theme-name)
-    (require 'spacemacs-common))
+    (require 'spacemacs-theme))
+  (when (string-match "^standard" theme-name)
+    (require 'standard-themes))
+  (when (string-match "^doom" theme-name)
+    (require 'doom-themes))
   (/init/util/disable-themes)
   (load-theme (intern theme-name) t))
 
