@@ -39,6 +39,7 @@ set listchars=tab:\`\ ,trail:•
 set background=light
 if has('gui_running')
 "    colorscheme solarized
+"    colorscheme evening
      set lines=27 columns=90
      set winaltkeys=no
 endif

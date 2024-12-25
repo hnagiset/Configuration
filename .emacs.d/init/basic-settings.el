@@ -18,9 +18,15 @@
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
 
-;(if (fboundp 'global-display-line-numbers-mode)
-;    (global-display-line-numbers-mode 1)
-;  (global-linum-mode 1))
+;;(when (fboundp 'pixel-scroll-precision-mode)
+;;  (pixel-scroll-precision-mode 1)
+;;  (setq pixel-scroll-precision-use-momentum t)
+;;  (setq pixel-scroll-precision-interpolate-page t))
+
+;;(if (fboundp 'global-display-line-numbers-mode)
+;;    (global-display-line-numbers-mode 1)
+;;  (global-linum-mode 1))
+
 (column-number-mode 1)
 (show-paren-mode 1)
 (scroll-bar-mode 0)
