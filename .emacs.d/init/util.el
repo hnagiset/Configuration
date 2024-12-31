@@ -170,7 +170,8 @@
 
 (defun /init/util/view-agenda (year)
   "Show agenda in an Org buffer."
-  (interactive (list (read-string "Year: " "2023")))
+  (interactive (list (read-string "Year: "
+                                  (format-time-string "%Y" (current-time)))))
   (switch-to-buffer (get-buffer-create "*agenda*"))
   (read-only-mode -1)
   (erase-buffer)
