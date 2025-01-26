@@ -37,6 +37,7 @@ set list
 set listchars=tab:\`\ ,trail:•
 
 set background=light
+set guifont=Source\ Code\ Pro\ 10
 if has('gui_running')
 "    colorscheme solarized
 "    colorscheme evening
