@@ -1,13 +1,15 @@
 #! /usr/bin/env bash
 
 DATA_DIR=$(mktemp -p /tmp -d chromium-data.XXXXXX.d)
+CLEAN="rm -rf $DATA_DIR"
 
-if command -v chromium-freeworld; then
-    EXE=chromium-freeworld
-else
-    EXE=chromium-browser
+CHROMIUM=chromium-browser
+if flatpak list | grep Chromium; then
+    CHROMIUM="flatpak run --filesystem=$DATA_DIR org.chromium.Chromium"
+elif command -v chromium-freeworld; then
+    CHROMIUM=chromium-freeworld
 fi
 
-$EXE --user-data-dir="$DATA_DIR" --enable-features=UseOzonePlatform --ozone-platform=wayland #--incognito
+$CHROMIUM --user-data-dir="$DATA_DIR" --enable-features=UseOzonePlatform --ozone-platform=wayland --window-size=1200,1000 #--incognito
 
 rm -rf "$DATA_DIR"
