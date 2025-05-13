@@ -10,9 +10,11 @@
   (when (display-graphic-p)
     (cond
      ((/init/util/font-exists-p "Source Code Pro")
-      (set-face-attribute 'default nil :font "Source Code Pro" :height 100))
+      (set-face-attribute 'default nil :font "Source Code Pro" :height 110))
+     ((/init/util/font-exists-p "Adwaita Mono")
+      (set-face-attribute 'default nil :font "Adwaita Mono" :height 110))
      ((/init/util/font-exists-p "Monospace")
-      (set-face-attribute 'default nil :font "Monospace" :height 120))
+      (set-face-attribute 'default nil :font "Monospace" :height 110))
      (t (set-face-attribute 'default nil :height 114)))))
 
 (defun /init/util/position-frame ()
