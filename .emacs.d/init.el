@@ -20,6 +20,11 @@
 
   ;; Setup package.el.
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+  (setq package-archive-priorities '(("gnu" . 10)
+                                     ("melpa" . 5))
+        package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                           ("melpa" . "https://stable.melpa.org/packages/")
+                           ("melpa-devel" . "https://melpa.org/packages/")))
   (require 'package)
   (package-initialize)
 
