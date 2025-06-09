@@ -9,15 +9,21 @@ link_file () {
     fi
 
     if [[ -e "$destination" ]]; then
-        echo "$destination is already present."
-        return 0
-    else
-        mkdir -p "$(dirname "$destination")" 
-        ln -s "$source" "$destination"
-        echo "---"
-        echo "Created $destination."
-        echo "---"
+        if [ "$1" -ef "$2" ]; then
+            echo "$destination is already present."
+            return 0
+        else
+            local bkup="$destination.$(date +%s)"
+            echo "Moving existing file to $bkup."
+            mv "$destination" "$bkup"
+        fi
     fi
+
+    mkdir -p "$(dirname "$destination")"
+    ln -s "$source" "$destination"
+    echo "---"
+    echo "Created $destination."
+    echo "---"
 }
 
 ## Usage: copy_file SRC DST
@@ -34,7 +40,7 @@ copy_file () {
         echo "$destination is already present."
         return 0
     else
-        mkdir -p "$(dirname "$destination")" 
+        mkdir -p "$(dirname "$destination")"
         cp -i "$source" "$destination"
         echo "---"
         echo "Created $destination."
