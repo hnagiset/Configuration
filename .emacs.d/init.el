@@ -26,6 +26,7 @@
                            ("melpa" . "https://stable.melpa.org/packages/")
                            ("melpa-devel" . "https://melpa.org/packages/")))
   (require 'package)
+  ;;(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
   (package-initialize)
 
   ;; Measure library load times.
