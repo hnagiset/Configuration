@@ -1,65 +1,88 @@
+check_for_backups () {
+    local tgt="$1"
+
+    local base="$(basename "$tgt")"
+    local dir="$(dirname "$tgt")"
+
+    if [ -n "$(find "$dir" -maxdepth 1 -name "$base.*" -print -quit)" ]; then
+        echo ""
+        echo "Possible backups: ($tgt)"
+        ls -1d "$tgt".1* 2> /dev/null
+        ls -1d "$tgt".2* 2> /dev/null
+        echo ""
+    fi
+}
+
 ## Usage: link_file SRC DST
 link_file () {
-    local source=$1
-    local destination=$2
+    local src=$1
+    local dst=$2
 
-    if [[ ! -e "$source" ]]; then
-        echo "$source is not present!"
+    if [[ ! -e "$src" ]]; then
+        echo "$src is not present!"
         return 1
     fi
 
-    if [[ -e "$destination" ]]; then
+    if [[ -e "$dst" ]]; then
         if [ "$1" -ef "$2" ]; then
-            echo "$destination is already present."
+            echo "$dst is already present."
+            check_for_backups "$dst"
             return 0
         else
-            local bkup="$destination.$(date +%s)"
+            local bkup="$dst.$(date +%s)"
             echo "Moving existing file to $bkup."
-            mv "$destination" "$bkup"
+            mv "$dst" "$bkup"
         fi
     fi
 
-    mkdir -p "$(dirname "$destination")"
-    ln -s "$source" "$destination"
+    mkdir -p "$(dirname "$dst")"
+    ln -s "$src" "$dst"
+    local retval=$?
     echo "---"
-    echo "Created $destination."
+    echo "Created $dst."
     echo "---"
+    return $retval
 }
 
 ## Usage: copy_file SRC DST
 copy_file () {
-    local source=$1
-    local destination=$2
+    local src=$1
+    local dst=$2
 
-    if [[ ! -e "$source" ]]; then
-        echo "$source is not present!"
+    if [[ ! -e "$src" ]]; then
+        echo "$src is not present!"
         return 1
     fi
 
-    if [[ -e "$destination" ]]; then
-        echo "$destination is already present."
+    if [[ -e "$dst" ]]; then
+        echo "$dst is already present."
+        check_for_backups "$dst"
         return 0
     else
-        mkdir -p "$(dirname "$destination")"
-        cp -i "$source" "$destination"
+        mkdir -p "$(dirname "$dst")"
+        cp -i "$src" "$dst"
+        local retval=$?
         echo "---"
-        echo "Created $destination."
+        echo "Created $dst."
         echo "---"
+        return $retval
     fi
 }
 
 ## Usage: clone_repo SRC DST
 clone_repo () {
-    local source=$1
-    local destination=$2
+    local src=$1
+    local dst=$2
 
-    if [[ -e "$destination" ]]; then
-        echo "$destination is already present."
+    if [[ -e "$dst" ]]; then
+        echo "$dst is already present."
         return 0
     else
-        git clone "$source" "$destination"
+        git clone "$src" "$dst"
+        local retval=$?
         echo "---"
-        echo "Created $destination."
+        echo "Created $dst."
         echo "---"
+        return $retval
     fi
 }
