@@ -5,11 +5,8 @@ check_for_backups () {
     local dir="$(dirname "$tgt")"
 
     if [ -n "$(find "$dir" -maxdepth 1 -name "$base.*" -print -quit)" ]; then
-        echo ""
-        echo "Possible backups: ($tgt)"
         ls -1d "$tgt".1* 2> /dev/null
         ls -1d "$tgt".2* 2> /dev/null
-        echo ""
     fi
 }
 
@@ -23,7 +20,7 @@ link_file () {
         return 1
     fi
 
-    if [[ -e "$dst" ]]; then
+    if [[ -e "$dst" ]] || [[ -L "$dst" ]]; then
         if [ "$1" -ef "$2" ]; then
             echo "$dst is already present."
             check_for_backups "$dst"
@@ -32,6 +29,7 @@ link_file () {
             local bkup="$dst.$(date +%s)"
             echo "Moving existing file to $bkup."
             mv "$dst" "$bkup"
+            check_for_backups "$dst"
         fi
     fi
 
