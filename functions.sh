@@ -26,8 +26,9 @@ link_file () {
             check_for_backups "$dst"
             return 0
         else
-            local bkup="$dst.$(date +%s)"
+            local bkup="backup.$(date +%s)"
             echo "Moving existing file to $bkup."
+            mkdir "$bkup"
             mv "$dst" "$bkup"
             check_for_backups "$dst"
         fi
