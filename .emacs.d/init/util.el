@@ -206,7 +206,7 @@
   "Create a new Org note."
   (interactive (list (read-string "Title: ")))
   (let* ((timestamp (car (process-lines "date" "+%s")))
-         (filename (concat "~/Documents/Notes/" timestamp ".org"))
+         (filename (concat "~/Primordial/Repos/Notes/" timestamp ".org"))
          (date (substring (shell-command-to-string "date +%Y/%m/%d") 0 -1)))
     (find-file filename)
     (erase-buffer)

@@ -38,7 +38,7 @@
 
 (defun /init/bindings/core/open-consolidated-notes ()
   (interactive)
-  (find-file "~/Documents/Notes/consolidated.org")
+  (find-file "~/Primordial/Repos/Notes/consolidated.org")
   (read-only-mode))
 
 (defun /init/bindings/core/open-scratch-buffer nil
