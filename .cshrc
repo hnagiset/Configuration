@@ -18,7 +18,7 @@ alias ll ls -o
 alias la ls -a
 
 alias hn-copy-pwd  pwd \| tr -d '\\n' \| xclip \; pwd
-alias hn-timestamp date '+%s-%Y_%b_%d'
+alias hn-timestamp date '+%y.%m.%d.%s'
 alias hn-git-tree  git log --oneline --graph --decorate --all
 alias hn-git-merge git merge --no-commit --no-ff
 
