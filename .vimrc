@@ -19,6 +19,8 @@ set path+=**
 " set autochdir
 set backspace=indent,eol,start
 
+set sessionoptions=buffers
+
 " I don't know why we check for 'reltime'. I copied this from Fedora's
 " /etc/vimrc. The comment was 'Do incremental searching when it's possible to
 " timeout.'

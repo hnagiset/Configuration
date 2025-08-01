@@ -45,6 +45,7 @@ link_file "$SCRIPT_DIR"/.tmux.conf                 "$HOME"/.tmux.conf
 link_file "$SCRIPT_DIR"/Bash/hn-convert-epoch.sh   "$HOME"/bin/hn-convert-epoch.sh
 link_file "$SCRIPT_DIR"/Bash/hn-firefox.sh         "$HOME"/bin/hn-firefox.sh
 link_file "$SCRIPT_DIR"/Bash/hn-chromium.sh        "$HOME"/bin/hn-chromium.sh
+link_file "$SCRIPT_DIR"/Bash/hn-vim-prime.sh       "$HOME"/bin/hn-vim-prime.sh
 link_file "$SCRIPT_DIR"/Csh/hn-tmpdir.csh          "$HOME"/bin/hn-tmpdir.csh
 
 # Misc
