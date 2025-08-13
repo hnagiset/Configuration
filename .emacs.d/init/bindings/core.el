@@ -105,7 +105,7 @@
   ("S" #'ispell-word "Correct Spelling at Point")
   ("V" (lambda ()
          (interactive)
-         (insert (gui-get-selection)))
+         (insert (gui-get-selection 'PRIMARY 'UTF8_STRING)))
    "Paste Contents of Primary Clipboard")
   ("O" #'just-one-space "Just One Space"))
 
