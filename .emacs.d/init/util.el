@@ -17,6 +17,19 @@
       (set-face-attribute 'default nil :font "Monospace" :height 110))
      (t (set-face-attribute 'default nil :height 114)))))
 
+(defun /init/util/font-monospace-small ()
+  "Set the default font to a monospace font."
+  (interactive)
+  (when (display-graphic-p)
+    (cond
+     ((/init/util/font-exists-p "Source Code Pro")
+      (set-face-attribute 'default nil :font "Source Code Pro" :height 100))
+     ((/init/util/font-exists-p "Adwaita Mono")
+      (set-face-attribute 'default nil :font "Adwaita Mono" :height 100))
+     ((/init/util/font-exists-p "Monospace")
+      (set-face-attribute 'default nil :font "Monospace" :height 100))
+     (t (set-face-attribute 'default nil :height 104)))))
+
 (defun /init/util/position-frame ()
   "Resize and position frame to top left."
   (interactive)
