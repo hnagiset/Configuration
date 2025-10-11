@@ -124,6 +124,7 @@ def main():
             indentation = space.group(0)
         line = line.strip()
         if not line:
+            statements.append(SplitStatement(""))
             continue
         if len(line) >= 2 and line[0:2] == "//":
             s = SplitStatement("")
