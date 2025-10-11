@@ -123,7 +123,14 @@ def main():
         if first_line and space:
             indentation = space.group(0)
         line = line.strip()
-        statements.append(SplitStatement(line))
+        if not line:
+            continue
+        if len(line) >= 2 and line[0:2] == "//":
+            s = SplitStatement("")
+            s.comment = line
+            statements.append(s)
+        else:
+            statements.append(SplitStatement(line))
         first_line = False
 
     max_t_and_p = max(len(s.data_type + s.packed) for s in statements)
