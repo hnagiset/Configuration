@@ -5,7 +5,7 @@ PROFILE_DIR=$(mktemp -p /tmp -d firefox-profile.XXXXXX.d)
 FIREFOX=firefox
 CLEAN="rm -rf $PROFILE_DIR"
 if flatpak list | grep Firefox; then
-    FIREFOX="flatpak run --filesystem=$PROFILE_DIR org.mozilla.firefox"
+    FIREFOX="flatpak run --filesystem=$PROFILE_DIR --filesystem=/srv/share org.mozilla.firefox"
 fi
 
 echo 'user_pref("browser.tabs.warnOnClose", true);' >> "$PROFILE_DIR/user.js"

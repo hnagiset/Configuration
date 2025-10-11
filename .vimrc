@@ -294,16 +294,16 @@ let g:verilog_syntax_fold_lst = "all"
 
 " Netrw Settings {{{1
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 0
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 0
 "let g:netrw_browse_split = 4
-let g:netrw_browse_split = 0
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+"let g:netrw_browse_split = 0
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
 
-" hide by default
-let g:netrw_list_hide = '^\..*'
-let g:netrw_hide = 1
+"" hide by default
+"let g:netrw_list_hide = '^\..*'
+"let g:netrw_hide = 1
 
 " Other Settings {{{1
 
