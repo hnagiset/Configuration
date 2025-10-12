@@ -25,7 +25,7 @@ def split_by_statement_terminator(s):
     x = s.split(";",  1)
     if len(x) == 2: return (x[0], ";", x[1])
     x = s.split(",", 1)
-    if len(x) == 2: return (x[0], ";", x[1])
+    if len(x) == 2: return (x[0], ",", x[1])
     return (s, "", "")
 
 def split_by_column(s):
@@ -135,16 +135,24 @@ def main():
         first_line = False
 
     max_t_and_p = max(len(s.data_type + s.packed) for s in statements)
+    max_t_and_p = 0
+    for s in statements:
+        x = len(s.data_type)
+        if s.packed:
+            x += len(s.packed) + 1
+        max_t_and_p = max(x, max_t_and_p)
+
     max_id = max(len(s.identifier) for s in statements)
 
     for s in statements:
         a = s.data_type
         b_width = max_t_and_p - len(a)
-        b = f"{s.packed:>{b_width + 1}}"
+        b = f"{s.packed:>{b_width}}"
         c = f" {s.identifier:<{max_id + 1}}"
         d = s.unpacked
         x = (a + b + c + d).strip()
-        print(f"{indentation}{x}{s.terminator}{s.comment}")
+        y = f"{indentation}{x}{s.terminator}{s.comment}"
+        print(y.rstrip())
 
 if __name__ == "__main__":
     main()
