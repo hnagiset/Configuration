@@ -5,7 +5,7 @@ PROFILE_DIR=$(mktemp -p /tmp -d firefox-profile.XXXXXX.d)
 FIREFOX=firefox
 CLEAN="rm -rf $PROFILE_DIR"
 if flatpak list | grep Firefox; then
-    FIREFOX="flatpak run --filesystem=$PROFILE_DIR --filesystem=/srv/share org.mozilla.firefox"
+    FIREFOX="flatpak run --filesystem=$PROFILE_DIR --filesystem=/srv/share  --filesystem=$HOME/nobackup/Downloads org.mozilla.firefox"
 fi
 
 echo 'user_pref("browser.tabs.warnOnClose", true);' >> "$PROFILE_DIR/user.js"
@@ -39,7 +39,7 @@ echo 'user_pref("datareporting.sessions.current.clean", true);' >> "$PROFILE_DIR
 cp ~/.mozilla/firefox/*.default*/search.json.mozlz4 "$PROFILE_DIR"
 
 $FIREFOX -profile "$PROFILE_DIR" -no-remote -new-instance \
-    --new-tab "perplexity.ai" #--new-tab "chatgpt.com"
+   --new-tab "gemini.google.com" #--new-tab "perplexity.ai" #--new-tab "chatgpt.com"
 #-private-window
 
 $CLEAN

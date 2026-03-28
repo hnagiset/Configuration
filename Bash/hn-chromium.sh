@@ -10,6 +10,6 @@ elif command -v chromium-freeworld; then
     CHROMIUM=chromium-freeworld
 fi
 
-$CHROMIUM --user-data-dir="$DATA_DIR" --enable-features=UseOzonePlatform --ozone-platform=wayland --window-size=1200,1000 #--incognito
+$CHROMIUM --user-data-dir="$DATA_DIR" --enable-features=UseOzonePlatform --ozone-platform=wayland --window-size=1320,1080 #--incognito
 
 rm -rf "$DATA_DIR"
