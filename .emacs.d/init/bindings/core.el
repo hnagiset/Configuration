@@ -53,7 +53,6 @@
   ("b" #'ido-switch-buffer "Switch Buffer")
   ("d" #'/init/util/insert-date "Insert Date")
   ("f" #'ido-find-file "Find File")
-  ("n" #'/init/util/create-note "Create Note")
   ("o" nil "Open...")
   ("oa" #'org-agenda-list "Open Agenda")
   ("on" #'/init/bindings/core/open-notes "Open Notes")
