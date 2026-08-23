@@ -101,6 +101,25 @@ fcl () {
         return 0
     fi
 
+    if command -v fzf &>/dev/null; then
+        local target
+        target=$(printf "%s\n" "${dirs[@]}" | fzf \
+            --query="$1" \
+            --height=40% \
+            --layout=reverse \
+            --border \
+            --prompt="Bookmarks > ")
+            #--preview="ls --color=auto {}" \
+            #--preview-window=bottom:50%:wrap)
+        if [[ -n "$target" ]]; then
+            cd "$target" && ls --color=auto
+            return 0
+        else
+            echo "Cancelled." >&2
+            return 1
+        fi
+    fi
+
     local choices=()
     if [ -n "$1" ]; then
         for d in "${dirs[@]}"; do
